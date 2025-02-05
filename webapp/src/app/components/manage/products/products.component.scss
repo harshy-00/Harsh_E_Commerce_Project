@@ -1,0 +1,167 @@
+// Colors and gradient shades
+$primary-blue: #1E3A8A;
+$secondary-blue: #3B82F6;
+$dark-black: #111827;
+$light-black: #374151;
+$accent-color: #9333EA;
+$warn-color: #F87171;
+
+// Font and Shadows
+$font-family: 'Roboto', sans-serif;
+$text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+// Animations
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+// Chronic Gradient Effect
+.chronic-gradient {
+  background: linear-gradient(45deg, $primary-blue, $dark-black, $secondary-blue);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Main container styling
+.container {
+  padding: 20px;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary-blue;
+    text-shadow: $text-shadow;
+    margin-bottom: 20px;
+    &:hover {
+      color: $secondary-blue;
+    }
+  }
+
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+
+    mat-label {
+      color: #fff;
+    }
+
+    input {
+      background-color: $dark-black;
+      color: #fff;
+      border: 1px solid $primary-blue;
+      border-radius: 5px;
+      padding: 10px;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: $secondary-blue;
+      }
+    }
+  }
+
+  .shadow {
+    background-color: $light-black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 0.5s ease;
+    
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+      color: #fff;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #333;
+      }
+
+      th {
+        font-size: 1rem;
+        color: $primary-blue;
+      }
+
+      td {
+        font-size: 0.9rem;
+      }
+
+      .mat-header-cell, .mat-row {
+        transition: background-color 0.3s ease;
+      }
+
+      .mat-header-row:hover, .mat-row:hover {
+        background-color: $dark-black;
+      }
+    }
+
+    .mat-paginator {
+      .mat-paginator-range-actions {
+        color: #fff;
+      }
+    }
+  }
+
+  .mat-raised-button {
+    background-color: $primary-blue;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-blue;
+      transform: scale(1.05);
+    }
+
+    &.mat-warn {
+      background-color: $warn-color;
+      &:hover {
+        background-color: darken($warn-color, 10%);
+      }
+    }
+
+    &.mat-accent {
+      background-color: $accent-color;
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mat-sort-header {
+    cursor: pointer;
+    &:hover {
+      color: $secondary-blue;
+    }
+  }
+
+  .mat-no-data-row {
+    color: #aaa;
+    text-align: center;
+  }
+}

@@ -1,0 +1,151 @@
+// Colors and gradient shades
+$primary-blue: #1E3A8A;
+$secondary-blue: #3B82F6;
+$dark-black: #111827;
+$light-black: #374151;
+$accent-color: #9333EA;
+$warn-color: #F87171;
+
+// Font and Shadows
+$font-family: 'Roboto', sans-serif;
+$text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+// Animations
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+// Chronic Gradient Effect
+.chronic-gradient {
+  background: linear-gradient(45deg, $primary-blue, $dark-black, $secondary-blue);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Main container styling
+.container {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary-blue;
+    text-shadow: $text-shadow;
+    margin-bottom: 20px;
+    &:hover {
+      color: $secondary-blue;
+    }
+  }
+
+  .form-container {
+    background-color: $light-black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 0.5s ease;
+
+    .mat-form-field {
+      width: 100%;
+      margin-bottom: 20px;
+
+      mat-label {
+        color: #fff;
+      }
+
+      input, textarea, mat-select {
+        background-color: $dark-black;
+        color: #fff;
+        border: 1px solid $primary-blue;
+        border-radius: 5px;
+        padding: 10px;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: $secondary-blue;
+        }
+      }
+    }
+
+    .mat-checkbox {
+      color: #fff;
+      font-weight: bold;
+
+      .mat-checkbox-inner-container {
+        border-radius: 4px;
+        border: 1px solid #aaa;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $primary-blue;
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      button {
+        background-color: $primary-blue;
+        color: #fff;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-blue;
+          transform: scale(1.05);
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .image-section {
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        button {
+          background-color: $accent-color;
+          color: #fff;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #8b5cf6;
+          }
+        }
+      }
+
+      .mat-form-field {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

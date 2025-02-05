@@ -1,0 +1,117 @@
+// Define premium color palette for registration form
+$primary-color: #3b82f6;  // Soft blue for primary buttons and highlights
+$secondary-color: #10b981;  // Fresh mint green
+$background-color: #f7fafc;  // Light gray background
+$input-bg: #ffffff;  // White background for form fields
+$border-color: #d1d5db;  // Light gray for borders
+$card-bg: #ffffff;  // White background for the card
+$shadow-color: rgba(0, 0, 0, 0.15);  // Subtle shadow effect
+
+// Global body and form styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: $background-color;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  width: 100%;
+
+  .register-card {
+    background-color: $card-bg;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px $shadow-color;
+    width: 50%;
+    max-width: 24rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .mat-form-field {
+      margin-bottom: 1.5rem;
+
+      .mat-label {
+        font-weight: bold;
+        color: $primary-color;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      input {
+        background-color: $input-bg;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        padding: 0.75rem;
+        width: 100%;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      background-color: $primary-color;
+      color: $white;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background-color: $border-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 640px) {
+  .register-container .register-card {
+    width: 90%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Apply fade-in effect for elements
+.register-card {
+  animation: fadeIn 1s ease-out;
+}

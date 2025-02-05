@@ -1,0 +1,118 @@
+// Colors and gradient shades
+$primary-blue: #1E3A8A;
+$secondary-blue: #3B82F6;
+$dark-black: #111827;
+$light-black: #374151;
+$accent-color: #9333EA;
+$warn-color: #F87171;
+
+// Font and Shadows
+$font-family: 'Roboto', sans-serif;
+$text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+// Animations
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+// Chronic Gradient Effect
+.chronic-gradient {
+  background: linear-gradient(45deg, $primary-blue, $dark-black, $secondary-blue);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Main container styling
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $primary-blue;
+      text-shadow: $text-shadow;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $secondary-blue;
+      }
+    }
+    button {
+      background-color: $primary-blue;
+      color: #fff;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      &:hover {
+        background-color: $secondary-blue;
+        animation: scaleUp 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .shadow {
+    background-color: $light-black;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        padding: 15px;
+        text-align: left;
+        font-size: 1rem;
+        color: #fff;
+      }
+      th {
+        background-color: $primary-blue;
+        font-weight: bold;
+      }
+      tr:hover {
+        background-color: $secondary-blue;
+        animation: scaleUp 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .mat-form-field {
+    width: 100%;
+    .mat-label {
+      color: $primary-blue;
+      text-shadow: $text-shadow;
+    }
+    .mat-input-element {
+      border-radius: 4px;
+      background-color: $dark-black;
+      color: #fff;
+      &:focus {
+        border-color: $secondary-blue;
+      }
+    }
+  }
+
+  .mat-paginator {
+    background-color: $light-black;
+    .mat-paginator-range-label {
+      color: #fff;
+    }
+  }
+}

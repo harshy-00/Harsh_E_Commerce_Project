@@ -1,0 +1,186 @@
+// Define custom premium color palette
+$deep-blue: #1e3a8a;    // Deep blue for premium feel
+$sky-blue: #3b82f6;     // Light blue for soft background
+$mint-green: #10b981;   // Fresh green for vibrant accent
+$golden-yellow: #f59e0b; // Elegant golden yellow for highlights
+$white: #ffffff;        // Pure white
+$gray-dark: #2d3748;    // Dark gray for text
+$gray-light: #e2e8f0;   // Light gray for subtle backgrounds
+$black: #000000;        // Black for contrast
+
+// Premium gradient and color transitions
+$gradient-primary: linear-gradient(135deg, $deep-blue, $sky-blue);
+$gradient-hover: linear-gradient(135deg, $mint-green, $golden-yellow);
+
+// Global styling for font, text, and spacing
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: $gray-light;
+  color: $gray-dark;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+// Container for layout
+.flex-container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+
+  .filters {
+    width: 25%;
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    &:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px);
+    }
+
+    h6 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: $deep-blue;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .mat-form-field {
+      margin-bottom: 1.5rem;
+      .mat-label {
+        color: $gray-dark;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .products {
+    flex-grow: 1;
+    background: $white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    &:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      h6 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $deep-blue;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+      }
+
+      .mat-form-field {
+        width: 10rem;
+        .mat-select {
+          padding: 0.5rem;
+          font-size: 1rem;
+          color: $gray-dark;
+          border-radius: 6px;
+          transition: border-color 0.3s ease;
+          &:hover {
+            border-color: $mint-green;
+          }
+        }
+      }
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      
+      .product-card {
+        width: 32%;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: $white;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+          padding: 1.5rem;
+          h5 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: $deep-blue;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+          }
+          p {
+            font-size: 1rem;
+            color: $gray-dark;
+          }
+          .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: $mint-green;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+
+      button {
+        padding: 0.75rem 2rem;
+        background-color: $deep-blue;
+        color: $white;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        &:hover {
+          background-color: $sky-blue;
+          transform: translateY(-2px);
+        }
+        &:disabled {
+          background-color: $gray-light;
+        }
+      }
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: $gray-dark;
+  height: 200px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Apply fade-in effect for elements on the page
+.flex-container {
+  animation: fadeIn 1s ease-out;
+}

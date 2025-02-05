@@ -1,0 +1,119 @@
+// Define premium color palette for wishlist
+$primary-color: #3b82f6;  // Soft blue for buttons and highlights
+$secondary-color: #f59e0b;  // Orange for discounts and important items
+$accent-color: #10b981;  // Green for actions and successful items
+$background-color: #f7fafc;  // Light background for the page
+$card-bg: #ffffff;  // White background for cards
+$shadow-color: rgba(0, 0, 0, 0.1);  // Soft shadows
+$gray-color: #e5e7eb;  // Gray for borders and backgrounds
+
+// Global body and layout styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: $background-color;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+// Wishlist container
+.wishlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h4 {
+    font-size: 1.25rem;
+    color: $gray-color;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 600;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+
+  .product-card {
+    width: 22%;
+    background-color: $card-bg;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $shadow-color;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+      text-align: center;
+
+      h3 {
+        font-size: 1.125rem;
+        color: $primary-color;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0.5rem;
+      }
+
+      .product-price {
+        font-size: 1rem;
+        color: $secondary-color;
+        text-decoration: line-through;
+        margin-bottom: 0.5rem;
+      }
+
+      .discount-price {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: $accent-color;
+      }
+
+      .add-to-cart-btn {
+        margin-top: 1rem;
+        background-color: $primary-color;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        font-weight: bold;
+        border-radius: 8px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Mobile responsiveness for wishlist
+@media (max-width: 768px) {
+  .wishlist-container {
+    padding: 1rem;
+
+    .product-grid {
+      justify-content: center;
+    }
+
+    .product-card {
+      width: 48%;
+    }
+  }
+}
+
+// Empty wishlist message styles
+.empty-wishlist {
+  color: #b0b0b0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}

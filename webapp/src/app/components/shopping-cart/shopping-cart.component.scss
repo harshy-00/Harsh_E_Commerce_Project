@@ -1,0 +1,247 @@
+// Define premium color palette for order steps
+$primary-color: #3b82f6;  // Soft blue for buttons and highlights
+$secondary-color: #f59e0b;  // Orange for discounts and important items
+$accent-color: #10b981;  // Green for actions and successful items
+$background-color: #f7fafc;  // Light background for the page
+$card-bg: #ffffff;  // White background for cards
+$shadow-color: rgba(0, 0, 0, 0.1);  // Soft shadows
+$gray-color: #e5e7eb;  // Gray for borders and backgrounds
+
+// Global body and layout styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: $background-color;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+// Container for the order steps
+.order-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: $primary-color;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+
+  .cart-items {
+    background-color: $card-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $shadow-color;
+    margin-bottom: 2rem;
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $gray-color;
+      padding: 1.5rem 0;
+
+      .item-details {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 80px;
+          height: 80px;
+          object-cover: cover;
+          border-radius: 8px;
+          margin-right: 1.5rem;
+          transition: transform 0.3s ease;
+        }
+
+        h2 {
+          font-size: 1.125rem;
+          font-weight: bold;
+          color: $primary-color;
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-info {
+          color: $secondary-color;
+          font-size: 1rem;
+          margin-top: 0.5rem;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          .old-price {
+            text-decoration: line-through;
+            color: #b0b0b0;
+          }
+
+          .discount {
+            color: $secondary-color;
+            font-size: 0.875rem;
+          }
+
+          .final-price {
+            font-weight: bold;
+            color: $accent-color;
+            font-size: 1.125rem;
+          }
+        }
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        span {
+          font-size: 1rem;
+        }
+
+        .quantity-btn {
+          background-color: $gray-color;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($gray-color, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .cart-summary {
+    background-color: $card-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $shadow-color;
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+
+      .total {
+        font-weight: bold;
+        color: $accent-color;
+      }
+    }
+
+    .checkout-btn {
+      background-color: $primary-color;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .address-form {
+    background-color: $card-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $shadow-color;
+    margin-bottom: 2rem;
+
+    .mat-form-field {
+      margin-bottom: 1.5rem;
+      .mat-label {
+        font-weight: bold;
+        color: $primary-color;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        background-color: $card-bg;
+        border: 1px solid $gray-color;
+        padding: 0.75rem;
+        border-radius: 8px;
+        width: 100%;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+        }
+      }
+    }
+
+    .continue-btn {
+      background-color: $primary-color;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .payment-method {
+    background-color: $card-bg;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $shadow-color;
+
+    .mat-radio-button {
+      color: $primary-color;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-btn {
+      background-color: $primary-color;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .order-container {
+    padding: 1rem;
+
+    .cart-items {
+      margin-bottom: 1.5rem;
+    }
+
+    .cart-summary {
+      margin-top: 1rem;
+    }
+
+    .address-form, .payment-method {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

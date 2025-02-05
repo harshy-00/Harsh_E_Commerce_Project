@@ -1,0 +1,108 @@
+/* Global styles and imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Include external stylesheets for third-party components */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+/* Custom dark theme styling */
+
+/* Global Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #121212, #333333);  /* Dark gradient background */
+  color: #fff;
+  line-height: 1.6;
+  transition: background-color 0.3s ease-in-out;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Header and Footer Styling */
+.app-header, .app-footer {
+  background: #1a1a1a;  /* Dark background for header and footer */
+  color: #fff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-header:hover, .app-footer:hover {
+  background-color: #3b3b3b;  /* Lighter shade on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Links Styling */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #10b981;  /* Hover color for links */
+}
+
+/* Button Styling */
+button, .mat-raised-button {
+  background: #3b82f6;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .mat-raised-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-4px);  /* Elevation effect on hover */
+}
+
+/* Card and Product Elements */
+.card, .product-card, .app-product-card {
+  background: #2d2d2d;  /* Dark background for cards */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .product-card:hover, .app-product-card:hover {
+  transform: translateY(-8px);  /* Card hover effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradient Background */
+.page-gradient {
+  background: linear-gradient(135deg, #121212, #333333);  /* Dark gradient */
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-anim {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Utility for Responsive Layout */
+@media (max-width: 768px) {
+  .app-header, .app-footer {
+    padding: 1rem;
+  }
+
+  .header-logo, .footer-logo {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,61 @@
+// Premium Login Component SCSS
+$primary-gradient: linear-gradient(135deg, #0f172a, #1e3a8a);
+$button-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+$hover-gradient: linear-gradient(135deg, #1e40af, #2563eb);
+$text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+$input-bg: rgba(255, 255, 255, 0.1);
+$input-border: rgba(255, 255, 255, 0.3);
+
+.login-container {
+  @apply flex justify-center w-full mt-10;
+
+  .login-box {
+    @apply p-8 rounded shadow-md w-6/12 sm:w-96;
+    background: $primary-gradient;
+    box-shadow: $box-shadow;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      @apply text-2xl font-bold mb-4;
+      text-shadow: $text-shadow;
+    }
+  }
+}
+
+form {
+  .mat-form-field {
+    @apply w-full;
+    background: $input-bg;
+    border-radius: 8px;
+    padding: 5px;
+    
+    input {
+      color: white;
+      font-weight: 500;
+    }
+  }
+}
+
+button {
+  @apply w-full text-white font-bold py-2 px-4 rounded;
+  background: $button-gradient;
+  box-shadow: $box-shadow;
+  transition: background 0.3s ease, transform 0.3s ease;
+  
+  &:hover {
+    background: $hover-gradient;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+  }
+}
