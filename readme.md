@@ -93,13 +93,13 @@ Use the following credentials to log in as an admin:
 ---
 
 ## 📌 Features
-✅ Full-Stack E-Commerce Platform
-✅ User Authentication & Authorization 🔐
-✅ Secure Database with MongoDB 🛢️
-✅ Interactive UI with Angular 🎨
-✅ Backend powered by Node.js & Express ⚙️
-✅ Admin Dashboard for Managing Products & Orders 📊
-✅ RESTful API Integration 🌐
+- ✅ Full-Stack E-Commerce Platform
+- ✅ User Authentication & Authorization 🔐
+- ✅ Secure Database with MongoDB 🛢️
+- ✅ Interactive UI with Angular 🎨
+- ✅ Backend powered by Node.js & Express ⚙️
+- ✅ Admin Dashboard for Managing Products & Orders 📊
+- ✅ RESTful API Integration 🌐
 
 ---
 
